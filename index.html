@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- script to add smooth scrolling -->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<script src="js/readmore.js"></script>
+	<script src="js/jquery.slides.min.js"></script>
+  	<style>
+	    /* Prevents slides from flashing */
+	    #slides {
+	      display:none;
+	    }
+  	</style>
+
+
+<link rel="stylesheet" type="text/css" href="css/mp3-player-button.css" />
+<script type="text/javascript" src="script/soundmanager2.js"></script>
+<script type="text/javascript" src="script/mp3-player-button.js"></script>
+<script>
+soundManager.setup({
+  // required: path to directory containing SM2 SWF files
+  url: 'swf/'
+});
+</script>    
+
+
+
+	<script type='text/javascript'>
+	$(document).ready(function() {
+	  function scrollToAnchor(aid){
+	    var aTag = $("a[name='"+ aid +"']");
+	    $('html,body').animate({scrollTop: aTag.offset().top},'slow');
+	  }
+	  $("a").click(function() {
+	    var href = $(this).attr('href').replace('#', '')
+	    scrollToAnchor(href);
+	  });     
+	});
+
+	</script>
+
+
+
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>The Good Life Festival</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/skeleton.css">
+  <link rel="stylesheet" href="css/custom.css">  
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="images/tglico.png">
+
+</head>
+<body>
+
+<!-- /* Header
+–––––––––––––––––––––––––––––––––––––––––––––––––– */ -->
+
+<div id="navBar">
+
+  <center>
+    <div class="navHome">
+    <a href="#home">
+    <img class="moveimage" src="images/home.png" width=18px ></a>
+    <a class="button button-primary" href="#attractions">Attractions</a>
+    <a class="button button-primary" href="#stage">Stage</a>
+    <a class="button button-primary" href="#food">Food</a>
+    <a class="button button-primary" href="#gallery">Gallery</a>
+    <a class="button button-primary" href="#mission">Mission</a>
+    <a class="button button-primary" href="#sponsors">Sponsors</a>   
+    <a class="button button-primary" href="#rsvp">RSVP</a>  
+    </div>    
+  </center>
+</div>
+
+  <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <a name="home"></a>
+  <div class="section hero">
+    <div class="container">  
+      <center><img src="images/tgllogo.png" alt="Good Life 2014" width=15%></center><br/>
+      <div class="row">
+        <div class="one-half column">
+
+          <h6 style="text-align:left">The Good Life Festival is an exciting night designed to celebrate and promote healthy living! Enjoy an evening full of FREE activities, live DJ, Zumba and line dancing sessions, human foosball, photo booth, free snacks, glow-flow yoga, rock climbing, interactive well-being activity booths and much more! <br/><br/>
+
+          <b>Date:</b> Saturday,  May 2<sup>nd</sup> <br/>
+          <b>Time:</b> 7–11pm <br/>
+          <b>Location:</b> Town Square & Matthew’s Quad<br/>
+          <b>Price:</b> FREE for UCSD students<br/>
+          <b>Wristbands:</b> Bring your Student ID to receive a wristband! Attendees must sign a waiver to receive a wristband and partake in the Good Life Festival. Stay tuned for details on waiver sign up and wristband distribution!<br/>
+          </h6>
+          
+        </div>
+        <div class="one-half column">
+          <iframe width="100%" height="315" src="https://www.youtube.com/embed/v0N6FQifXrg" frameborder="0" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- /* Countdown
+–––––––––––––––––––––––––––––––––––––––––––––––––– */ -->
+  <div class="section countdown";>
+    <div class="container">
+      <div class="row">
+        <div class="eleven column ">
+          <h5 class="countfont" style="font-weight: bold">
+
+			<script>
+			var end = new Date('05/02/2015 07:1 PM');
+
+			    var _second = 1000;
+			    var _minute = _second * 60;
+			    var _hour = _minute * 60;
+			    var _day = _hour * 24;
+			    var timer;
+
+			    function showRemaining() {
+			        var now = new Date();
+			        var distance = end - now;
+			        if (distance < 0) {
+
+			            clearInterval(timer);
+			            document.getElementById('countdown').innerHTML = 'EXPIRED!';
+
+			            return;
+			        }
+			        var days = Math.floor(distance / _day);
+			        var hours = Math.floor((distance % _day) / _hour);
+			        var minutes = Math.floor((distance % _hour) / _minute);
+			        var seconds = Math.floor((distance % _minute) / _second);
+
+			        document.getElementById('countdown').innerHTML = days + 'days ';
+			        document.getElementById('countdown').innerHTML += hours + 'hrs ';
+			        document.getElementById('countdown').innerHTML += minutes + 'mins ';
+			        document.getElementById('countdown').innerHTML += seconds + 'secs';
+			    }
+
+			    timer = setInterval(showRemaining, 1000);
+			</script>
+			<div id="countdown"></div>until the Goodlife Festival!
+
+			</h5>  
+        </div>
+      </div>
+    </div>
+  </div>    
+
+<!-- /* Attractions
+–––––––––––––––––––––––––––––––––––––––––––––––––– */ -->
+  <a name="attractions"></a>
+  <div class="section values";>
+    <div class="container topheaders">
+      <div class="row">
+        <div class="one column value">
+          <h5 class="value-multiplier" style="font-weight: bold">Attractions:</h5>
+        </div>
+      </div>
+    </div>
+
+    	<!-- style="overflow-y:auto; height:400px;"  // if you want to have scroll -->
+      <div class="container"; >
+      <!-- <article> -->
+
+     
+        <div class="row">
+          <div class="one-third column value">
+            <h2 class="value-multiplier"><img src="images/attractions/0hamster.jpg" width="50%"></h2>
+            <h6 class="value-heading">Aqua Hamster Ball</h6>
+          </div>
+          <div class="one-third column value">
+            <h2 class="value-multiplier"><img src="images/attractions/1foos.jpg" width="50%"></h2>
+            <h6 class="value-heading">Human Foosball</h6>
+            
+          </div>
+          <div class="one-third column value">
+            <h2 class="value-multiplier"><img src="images/attractions/2rock.jpg" width="50%"></h2>
+            <h6 class="value-heading">Rock Climbing</h6>
+            
+          </div>        
+        </div>
+
+        <div class="row">
+          <div class="one-third column value">
+            <h2 class="value-multiplier"><img src="images/attractions/3henna.jpg" width="50%"></h2>
+            <h6 class="value-heading">Henna Tattoos</h6>
+            
+          </div>
+          <div class="one-third column value">
+            <h2 class="value-multiplier"><img src="images/attractions/4face.jpg" width="50%"></h2>
+            <h6 class="value-heading">Face Painting</h6>
+            
+          </div>
+          <div class="one-third column value">
+            <h2 class="value-multiplier"><img src="images/attractions/5photo.jpg" width="50%"></h2>
+            <h6 class="value-heading">Photo Booth</h6>
+            
+          </div>        
+        </div>
+
+        <div class="row">
+          <div class="one-third column value">
+            <h2 class="value-multiplier"><img src="images/attractions/6craft.jpg" width="50%"></h2>
+            <h6 class="value-heading">Craft Booths</h6>
+            
+          </div>
+          <div class="one-third column value">
+            <h2 class="value-multiplier"><img src="images/attractions/7activity.jpg" width="50%"></h2>
+            <h6 class="value-heading">Well-being Activity Booths</h6>
+            
+          </div>
+          <div class="one-third column value">
+            <h2 class="value-multiplier"><img src="images/attractions/8dj.jpg" width="50%"></h2>
+            <h6 class="value-heading">DJ Harry Bui</h6>
+            
+          </div>        
+        </div>
+
+<!-- free snakcs, healthy food vendors, prizes and giveaways -->
+<!--         <div class="row">
+          <div class="one-third column value">
+            <h2 class="value-multiplier"><img src="images/attractions/9snacks.jpg" width="50%"></h2>
+            <h6 class="value-heading">Free Snacks</h6>
+            <p class="value-description">Click here to see!</p>
+          </div>
+          <div class="one-third column value">
+            <h2 class="value-multiplier"><img src="images/attractions/10food.jpg" width="50%"></h2>
+            <h6 class="value-heading">Healthy Food Vendors</h6>
+            <p class="value-description">Click here to see!</p>
+          </div>
+          <div class="one-third column value">
+            <h2 class="value-multiplier"><img src="images/attractions/10food.jpg" width="50%"></h2>
+            <h6 class="value-heading">Prizes & Giveaways</h6>
+
+          </div>        
+        </div> -->
+
+        <div class="row">
+          <div class="one-third column value">
+            <h2 class="value-multiplier"><img src="images/attractions/12zumba.jpg" width="50%"></h2>
+            <h6 class="value-heading">Zumba</h6>
+            <!-- <p class="value-description"><a href="#stage">Stage Schedule</a></p> -->
+          </div>
+          <div class="one-third column value">
+            <h2 class="value-multiplier"><img src="images/attractions/13line.jpg" width="50%"></h2>
+            <h6 class="value-heading">Line Dancing</h6>
+            <!-- <p class="value-description"><a href="#stage">Stage Schedule</a></p> -->
+          </div>
+          <div class="one-third column value">
+            <h2 class="value-multiplier"><img src="images/attractions/14glow.jpg" width="50%"></h2>
+            <h6 class="value-heading">Glow-Flow Yoga Sessions</h6>
+            <!-- <p class="value-description"><a href="#stage">Stage Schedule</a></p> -->
+          </div>        
+        </div>
+
+      <!-- </article> -->
+       
+      </div>
+
+
+
+  </div>
+<!-- /* Stage
+–––––––––––––––––––––––––––––––––––––––––––––––––– */ -->
+  <a name="stage"></a>
+  <div class="section stage";>
+    <div class="container topheaders">
+        <div class="eleven column"; style="text-align:left">
+          <h5 class="stage-font"; style="font-weight: bold" >Stage Schedule:</h5>  
+        </div>
+    </div>
+
+    <div class="container">
+      <div class="row content">
+
+        <div class="one-half column">
+        <div class="schedule" style="font-weight: bold" >Main Stage (Town Square)</div>
+        <div class="subschedule">Stop by throughout the night for 15-minute Zumba and Line Dancing sessions!</div>          
+        <table class="u-full-width" style="border-collapse: collapse">      
+          <thead style="border-top: 15px solid white;">
+            <tr>
+              <th>Time</th>
+              <th>Activity</th>
+              <th>Song</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>8:00pm</td>
+              <td>Zumba with Olga</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>8:30pm</td>
+              <td>Line Dance with Alfredo</td>
+              <td>Good Time</td>
+              <td>
+              <p><a href="song/goodtime.mp3" class="sm2_button"></a></p>
+              </td>
+            </tr>
+            <tr>
+              <td>9:00pm</td>
+              <td>Zumba with Olga</td>
+              <td></td>
+            </tr> 
+            <tr>
+              <td>9:30pm</td>
+              <td>Line Dance with Alfredo</td>
+              <td>Crank It Up</td>
+              <td>
+              <p><a href="song/crankitup.mp3" class="sm2_button"></a></p>
+              </td>
+              </td>
+            </tr>
+            <tr>
+              <td>10:00pm</td>
+              <td>Zumba with Olga</td>
+              <td></td>
+            </tr>         
+
+          </tbody>
+        </table>  
+          
+        </div>
+        <div class="one-half column">
+          <div class="schedule" style="font-weight: bold" >Glow-Flow Yoga (Matthew’s Quad)</div>
+          <div class="subschedule">Drop in for 15-minute Yoga sessions all night with instructor Adriana; all levels welcome!</div>        
+          <table class="u-full-width" style="border-collapse: collapse">
+            <thead style="border-top: 15px solid white; border-left: 35px solid white;">
+              <tr>
+                <th>Time</th>
+                <th>Activity</th>
+              </tr>
+            </thead>
+            <tbody style="border-left: 35px solid white;">
+              <tr>
+                <td>7:45pm</td>
+                <td>Glow Flow</td>
+              </tr>
+              <tr>
+                <td>8:15pm</td>
+                <td>Stress Away</td>
+              </tr>
+              <tr>
+                <td>8:45pm</td>
+                <td>Sun Salutations</td>
+              </tr> 
+              <tr>
+                <td>9:15pm</td>
+                <td>Funky Flow</td>
+              </tr>
+              <tr>
+                <td>9:45pm</td>
+                <td>Glow Flow</td>
+              </tr>         
+            </tbody>
+            </div>
+          </table> 
+
+        </div>
+      </div>  
+    </div>
+  </div>
+<!-- /* Food
+–––––––––––––––––––––––––––––––––––––––––––––––––– */ -->
+  <a name="food"></a>
+  <div class="section food";>
+    <div class="container topheaders">
+        <div class="eleven column"; style="text-align:left">
+          <h5 class="food-font"; style="font-weight: bold" >Food:</h5>  
+        </div>
+    </div>
+
+    <div class="container";>
+      <div class="row">
+        <div class="seven column" style="text-align:left">
+          <h6>FREE mini-meals for the first 2,000 guests. Each guest will have their choice of one of the following options (while supplies last):</h6>
+        </div>
+      </div>    
+      <div class="row" >
+        <div class="one-third column value">
+          <img src="images/organic.jpg" height=100px>
+          <a href="http://ofoodtruck.com"target="_blank"><h6 style="font-weight:bold; text-decoration: underline">Organic Food Truck</h6></a>
+          <ul>
+            <li>Lobster Mac & Cheese</li>
+            <li>Organic Grass-fed Beef Chili</li>
+          </ul>          
+
+        </div>
+        <div class="one-third column value">
+          <img src="images/chips.gif" height=100px>
+          <a href="http://www.chipsbeacheatz.com"target="_blank"><h6 style="font-weight:bold; text-decoration: underline">Chip’s Beach Eatz</h6></a>
+          <ul>
+            <li>Chicken Taco</li>
+            <li>Vegetarian Taco</li>
+          </ul>            
+        </div>
+        <div class="one-third column value">
+          <img src="images/philly.png" height=100px>
+          <a href="http://phillysoftpretzelcompany.com"target="_blank"><h6 style="font-weight:bold; text-decoration: underline">Philly Soft Pretzel Co.</h6></a>
+          <ul>
+            <li>Philly Original Pretzel</li>
+          </ul>            
+        </div>        
+      </div>
+
+      <div class="row">
+        <div class="seven column" style="text-align:center; font-style: italic">
+          <h6>After all free items are distributed, food will be available for sale.</h6>
+        </div>
+      </div>  
+
+      <div class="row">
+        <div class="seven column" style="text-align:center">
+          <h6><b>FREE</b> samples from healthy food vendors will also be available. Try out some tasters from:</h6>
+        </div>
+      </div> 
+
+<table class="u-full-width">
+  <thead>
+    <tr>
+
+      <th><center><h6 style="font-weight:bold; text-decoration: underline">
+          <a href="http://www.kindsnacks.com"target="_blank">KIND Bar</a></h6></center></th>
+
+      <th><center><h6 style="font-weight:bold; text-decoration: underline;">
+          <a href="http://www.sujajuice.com"target="_blank">Suja Juice</a></h6></center></th>
+
+      <th><center><h6 style="font-weight:bold; text-decoration: underline">
+          <a href="http://invo-juice.com"target="_blank">INVO</a></h6></center></th>
+      </tr>
+
+  </thead>
+  <tbody>
+    <tr>
+    
+      <td><center><img src="images/kind.jpg" width=100px></center></td>
+      <td><center><img src="images/suja.png" width=100px></center></td>
+      <td><center><img src="images/invo.png" width=100px></center></td>
+      </tr>
+
+  </tbody>
+</table>    
+
+
+<!--       <div class="row">
+        <div class="one-third column value">
+          <h6 style="font-weight:bold; text-decoration: underline">
+          <a href="http://www.kindsnacks.com"target="_blank">KIND Bar</a></h6>
+
+          <img src="images/kind.jpg" height=100px>
+      
+
+        </div>
+        <div class="one-third column value">
+          <h6 style="font-weight:bold; text-decoration: underline;">
+          <a href="http://www.sujajuice.com"target="_blank">Suja Juice</a></h6>
+
+          <img src="images/suja.png" height=100px>
+          
+        </div>
+        <div class="one-third column value">
+          <h6 style="font-weight:bold; text-decoration: underline">
+          <a href="http://invo-juice.com"target="_blank">INVO Coconut Water</a></h6>
+
+          <img src="images/invo.png" height=100px>
+          
+        </div>        
+      </div>    -->         
+
+    </div>
+  </div>  
+
+<!-- /* Gallery
+–––––––––––––––––––––––––––––––––––––––––––––––––– */ -->
+  <a name="gallery"></a>
+  <div class="section gallery";>
+    <div class="container topheaders">
+        <div class="eleven column"; style="text-align:left">
+          <h5 class="gallery-font"; style="font-weight: bold" >Gallery:</h5>  
+        </div>
+    </div>
+
+    <div class="container carousel";>
+        <div id="slides">
+		    <img src="images/slides_0.jpg">
+		    <img src="images/slides_1.jpg">
+		    <img src="images/slides_2.jpg">
+		    <img src="images/slides_3.jpg">
+		    <img src="images/slides_4.jpg">
+		    <img src="images/slides_5.jpg">
+		    <img src="images/slides_6.jpg">
+		    <img src="images/slides_7.jpg">
+		    <img src="images/slides_8.jpg">
+		    <img src="images/slides_9.jpg">
+		    <img src="images/slides_10.jpg">
+		    <img src="images/slides_11.jpg">
+		    <img src="images/slides_12.jpg">
+		    <img src="images/slides_13.jpg">
+		    <img src="images/slides_14.jpg">
+		    <img src="images/slides_15.jpg">		    		    
+
+  		
+  		<div class="slidesjs-previous slidesjs-navigation"><img src="images/prev.png" width=18px></div>
+  		<div class="slidesjs-next slidesjs-navigation"><img src="images/next.png" width=18px></div>
+  		</div>
+
+    </div>
+
+  </div>  
+
+<!-- /* Mission
+–––––––––––––––––––––––––––––––––––––––––––––––––– */ -->
+  <a name="mission"></a>
+  <div class="section mission";>
+    <div class="container topheaders">
+        <div class="eleven column"; style="text-align:left">
+          <h5 class="mission-font"; style="font-weight: bold" >The Good Life’s Mission</h5>  
+        </div>
+    </div>
+
+    <div class="container";>
+      <div class="mission-body">The Good Life Festival serves as a healthy, social opportunity for UC San Diego students. The Festival’s purpose is to engage students in fun, healthy on-campus activities and also inform students of on-campus well-being resources. </div>
+    </div>
+  </div>  
+
+<!-- /* Sponsors
+–––––––––––––––––––––––––––––––––––––––––––––––––– */ -->
+  <a name="sponsors"></a>
+  <div class="section sponsors";>
+    <div class="container topheaders">
+        <div class="eleven column"; style="text-align:left">
+          <h5 class="sponsors-font"; style="font-weight: bold" >Sponsors:</h5>  
+        </div>
+    </div>
+
+    <div class="container";>
+      <h6>The Good Life Festival is brought to you by:</h6>
+
+<table class="u-full-width">
+  <thead>
+    <tr>
+
+      <th><center><a href="https://students.ucsd.edu/well-being/" target="_blank"><img src="images/cluster.png" width=30%></a></center></th>
+      <th><center><a href="https://students.ucsd.edu/well-being/" target="_blank"><img src="images/rec.png" width=35%></a></center></th>
+      <th><center><a href="https://students.ucsd.edu/well-being/" target="_blank"><img src="images/cluster.png" width=35%></a></center></th>
+      </tr>
+
+  </thead>
+  <tbody>
+    <tr>
+      <td><center><h6><a href="https://students.ucsd.edu/well-being/" target="_blank">Student Health & Well-being</a></h6></center></td>
+      <td><center><h6><a href="http://recreation.ucsd.edu/" target="_blank">Recreation</a></h6></a></center></td>
+      <td><center><h6><a href="http://zone.ucsd.edu/" target="_blank">The Zone</a></h6></a></center></td>
+      </tr>
+
+  </tbody>
+</table>   
+
+<h6>Other on-campus well-being resources:</h6> 
+
+<table class="u-full-width">
+  <thead>
+    <tr>
+
+      <th><center><a href="http://caps.ucsd.edu" target="_blank"><img src="images/caps.png" width=50px></a></center></th>
+      <th><center><a href="https://students.ucsd.edu/well-being/_organizations/sarc/index.html" target="_blank"><img src="images/sarc.png" width=50px></a></center></th>
+      <th><center><a href="http://studenthealth.ucsd.edu/healtheducation.shtml" target="_blank"><img src="images/healthpromo.png" width=50px></a></center></th>
+      </tr>
+
+  </thead>
+  <tbody>
+    <tr>
+      <td><center><h6><a href="http://caps.ucsd.edu" target="_blank">CAPS</a></h6>  </center></td>
+      <td><center><h6><a href="https://students.ucsd.edu/well-being/_organizations/sarc/index.html" target="_blank">CARE/SARC</a></h6></center></td>
+      <td><center><h6><h6><a href="http://studenthealth.ucsd.edu/healtheducation.shtml" target="_blank">HPS</a></h6></center></td>
+      </tr>
+
+  </tbody>
+</table>  
+
+<h6><a href="http://5k.ucsd.edu/" target="_blank"><img class="imgtop" src="images/5k.png" width=50px></a>The Good Life continues at the Triton 5K! Register today at <a href="http://5k.ucsd.edu/" target="_blank">5k.ucsd.edu</a></h6>    
+
+
+<!--       <div class="row ">
+      	<div class="one-third column ">
+      		<a href="https://students.ucsd.edu/well-being/" target="_blank"><img src="images/cluster.png" width=35%></a>
+      		<h6><a href="https://students.ucsd.edu/well-being/" target="_blank">Student Health & Well-being</a></h6>
+      	</div>
+      	<div class="one-third column">
+      		<a href="http://recreation.ucsd.edu/" target="_blank"><img src="images/rec.png" width=35%></a>
+      		<h6><a href="http://recreation.ucsd.edu/" target="_blank">Recreation</a></h6></a>
+      	</div>
+      	<div class="one-third column">
+      		<a href="http://zone.ucsd.edu/" target="_blank"><img src="images/cluster.png" width=35%></a>
+      		<h6><a href="http://zone.ucsd.edu/" target="_blank">The Zone</a></h6></a>
+      	</div>      	
+      </div>    -->
+
+<!--       <h6>Other on-campus well-being resources:</h6> 	
+      <div class="row">
+      	<div class="one-third column">
+      		<a href="http://caps.ucsd.edu" target="_blank"><img src="images/caps.png" width=50px></a>
+      		<h6><a href="http://caps.ucsd.edu" target="_blank">CAPS</a></h6>  		  		
+      	</div>
+      	<div class="one-third column">
+      		<a href="https://students.ucsd.edu/well-being/_organizations/sarc/index.html" target="_blank"><img src="images/sarc.png" width=50px></a>
+      		<h6><a href="https://students.ucsd.edu/well-being/_organizations/sarc/index.html" target="_blank">CARE/SARC</a></h6></a>
+      	</div>
+      	<div class="one-third column">
+      		<a href="http://studenthealth.ucsd.edu/healtheducation.shtml" target="_blank"><img src="images/healthpromo.png" width=50px></a>
+      		<h6><a href="http://studenthealth.ucsd.edu/healtheducation.shtml" target="_blank">HPS</a></h6></a>
+      	</div>      	
+      </div>   -->      
+
+    </div>
+  </div>  
+
+<!-- /* Facebook
+–––––––––––––––––––––––––––––––––––––––––––––––––– */ -->
+  <a name="rsvp"></a>
+  
+  <div class="section facebook";>
+    <div class="container ">
+    <a href="https://www.facebook.com/events/1549821018614225/" target="_blank">
+      <div class="row">
+        <div class="eleven column ">
+          <h5 class="fbfont" style="font-weight: bold">RSVP on Facebook!</h5>  
+          <h6>RSVP to the Good Life Festival event site for real time updates and information!</h6>
+        </div>
+      </div>
+    </a>
+    </div>
+  </div>  
+
+<!-- /* QUESTIONS
+–––––––––––––––––––––––––––––––––––––––––––––––––– */ -->
+  <div class="question";>
+
+      <div class="question-body"><b>Questions about the Good Life Festival?</b> Contact Iris Crowe-Lerma at <a href="mailto:icrowelerma@ucsd.edu" target="_top">icrowelerma@ucsd.edu</a> or 858-534-5553
+      </div>
+
+  </div>    
+
+<!-- readmore -->
+<script>
+$('article').readmore({
+ speed: 1000,
+collapsedHeight: 300,
+heightMargin: 16,
+moreLink: '<a href="#"><img src="images/down.png" width=18px></a>',
+lessLink: '<a href="#"><img src="images/up.png" width=18px></a>',
+embedCSS: true,
+blockCSS: 'display: block; width: 100%;',
+startOpen: false,
+
+// callbacks
+beforeToggle: function(){},
+afterToggle: function(){}
+});
+</script>  
+
+	<script>
+
+		$(function(){
+		  $("#slides").slidesjs({
+    width: 700,
+    height: 393,		  	
+		    navigation: false,
+		    pagination: false,	
+    play: {
+      active: false,
+        // [boolean] Generate the play and stop buttons.
+        // You cannot use your own buttons. Sorry.
+      effect: "slide",
+        // [string] Can be either "slide" or "fade".
+      interval: 2500,
+        // [number] Time spent on each slide in milliseconds.
+      auto: true,
+        // [boolean] Start playing the slideshow on load.
+      swap: false,
+        // [boolean] show/hide stop and play buttons
+      pauseOnHover: true,
+        // [boolean] pause a playing slideshow on hover
+      restartDelay: 1000
+        // [number] restart delay on inactive slideshow
+    }		        
+
+		  });
+		});	
+
+	</script> 
+
+	<!-- google analytics -->
+	
+	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', 'UA-49098351-3', 'auto');
+	  ga('send', 'pageview');
+
+	</script>
+
+
+<!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+</body>
+</html>
